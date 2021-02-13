@@ -4,11 +4,21 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
-        <div id="img-form">
+        <div id="container">
             <form action="{{ url_for('findIngredients') }}" method="post">
                 <input type="text" name="query_url" placeholder="Paste in a URL of an image" id="image-upload">
                 <input type="submit" value="Submit" class="sub">
             </form>
+            <div id="ingredients">
+                {% if foods %}
+                    <h2>Ingredients: </h2>
+                {% endif %}
+                <ul>
+                    {% for item in foods %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
     </body>
 </html>

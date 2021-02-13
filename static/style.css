@@ -1,14 +1,15 @@
 body {
     background-color: #B7B7A4;
 }
-#img-form {
+#container{
     position: absolute;
     top: 10%;
     left: 15%;
     width: 70%;
     background-color: #f0efeb;
-    height: 80%;
+    /* height: 80%; */
     margin: auto;
+    border: 1px #CB997E solid;
 }
 input[type=text] {
     display: block;
@@ -22,6 +23,7 @@ input[type=text] {
     height: 70px;
     font-size: 24px;
     font-family: "Lucida Console", "Courier New", monospace;
+    border: 5px #CB997E solid;
 }
 input[type=submit] {
     display: block;
@@ -39,4 +41,10 @@ input[type=submit] {
     height: 70px;
     font-size: 24px;
     font-family: "Lucida Console", "Courier New", monospace;
+  }
+  #ingredients {
+      display: block;
+      font-size: 18px;
+      padding: 16px 32px;
+      font-family: "Lucida Console", "Courier New", monospace;
   }

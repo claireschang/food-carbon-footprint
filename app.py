@@ -36,13 +36,14 @@ def findIngredients():
 
     foods = []
     for concept in response.outputs[0].data.concepts:
-        print('%12s: %.2f' % (concept.name, concept.value))
-        foods.append(concept.name)
+        # print('%12s: %.2f' % (concept.name, concept.value))
+        if concept.value > 0.70:
+            foods.append(concept.name)
 
-    print(foods)
-    if 'nut' in foods:
-        print("Allergy alert!")
-    return str(foods)
+    # print(foods)
+    # if 'nut' in foods:
+    #     print("Allergy alert!")
+    return render_template("index.html", foods=foods)
 
 if __name__=='__main__': 
    app.run()
