@@ -12,7 +12,7 @@ const Food = () => {
         phone: '',
         trees: '',
     });
-    const serverEndpoint = 'http://798358337948.ngrok.io';
+    const serverEndpoint = 'http://localhost:5000';
     const submitForm = (e) => {
         e.preventDefault();
         let userInput = document.getElementById('image-upload').value;
@@ -28,6 +28,7 @@ const Food = () => {
 
     return (
         <div id="container" style={{"padding-top": '100px'}}>
+            <h2>Carbon Emission from Food Sources</h2>
             <form>
                 <input type="text" name="query_url" placeholder="Paste in a URL of an image" id="image-upload" />
                 <input type="submit" value="Submit" className="sub" onClick={submitForm}/>

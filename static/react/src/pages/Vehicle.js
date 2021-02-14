@@ -67,7 +67,7 @@ class Vehicle extends Component {
     render (){
         if (!this.state.answer){
             return (
-                <div className="container-md my-5 pt-3">
+                <div className="container-md my-5 pt-3" id="container">
                     <h2 className="py-5">Carbon Emission by Driving Vehicle</h2>
                     <form className="px-md-5" onSubmit = {this.handleSubmit}>
                             <div className="form-group">
@@ -90,7 +90,7 @@ class Vehicle extends Component {
         }
         else{
             return (
-                <div className="container-md my-5 pt-5 pt-md-0">
+                <div className="container-md my-5 pt-5 pt-md-0" id="container">
                     <h2 className="py-5">Carbon Emission by Driving Vehicle</h2>
                     <p>Total Carbon Emission (kg): {this.state.carbon_kg}</p>
                     <p>Total Carbon Emission (lb): {this.state.carbon_lb}</p>

@@ -21,7 +21,7 @@ class App extends Component {
 
         <Router>
           <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-            <span><Link className="navbar-brand h2" to='/'>Sustainable Lifestyle</Link></span>
+            <span><Link className="navbar-brand h2" to='/'>Carbonology</Link></span>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
@@ -30,9 +30,9 @@ class App extends Component {
                 <li className="nav-item dropdown">
                   <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Carbon Emission</a>
                   <div className="dropdown-menu">
-                      <Link className="dropdown-item" to='/vehicle'>Carbon Emission by Driving Vehicle</Link>
-                      <Link className="dropdown-item" to = '/shipping'>Carbon Emission of Shipping Packages</Link>
-                      <Link className="dropdown-item" to = '/electricity'>Carbon Emission of Electricity Consumption</Link>
+                      <Link className="dropdown-item" to='/vehicle'>Driving</Link>
+                      <Link className="dropdown-item" to = '/shipping'>Shipping</Link>
+                      <Link className="dropdown-item" to = '/electricity'>Electricity</Link>
                       <Link className="dropdown-item" to = '/food'>Food</Link>
                   </div>
                 </li>

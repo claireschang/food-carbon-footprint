@@ -62,7 +62,7 @@ class Electricity extends Component {
     render (){
         if (!this.state.answer){
             return (
-                <div className="container-md my-5 pt-3">
+                <div className="container-md my-5 pt-3" id="container">
                     <h2 className="py-5">Carbon Emission of Electricity Consumption</h2>
                     <form className="px-md-5" onSubmit = {this.handleSubmit}>
                         <div className="form-group">
