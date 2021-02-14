@@ -119,16 +119,16 @@ class Shipping extends Component {
         }
         else{
             return (
-                <div className="container-md my-5 pt-3">
+                <div className="container-md my-5 pt-3" id="container">
                     <h2 className="py-5">Carbon Emission of Shipping</h2>
                     <p>Total Carbon Emission (g): {this.state.carbon_g}</p>
                     <p>Total Carbon Emission (lb): {this.state.carbon_lb}</p>
                     <ul className="list-group" style={{color: 'black'}}>
-                        <li className="list-group-item">Greenhouse gas emissions from <b>{Math.round(1126 * this.state.carbon_lb / 1000)}</b> miles driven by an average passenger vehicle</li>
-                        <li className="list-group-item">CO<sub>2</sub> emissions from <b>{Math.round(51 * this.state.carbon_lb / 1000)}</b> gallons of gasoline consumed</li>
-                        <li className="list-group-item">CO<sub>2</sub> emissions from <b>{Math.round(500 * this.state.carbon_lb / 1000)}</b> pounds of coal burned</li>
-                        <li className="list-group-item">CO<sub>2</sub> emissions from <b>{Math.round(57848 * this.state.carbon_lb / 1000)}</b> phones charged</li>
-                        <li className="list-group-item">Carbon sequested by <b>{Math.round(7.5 * this.state.carbon_lb / 1000)}</b> tree saplings grown for 10 years</li>
+                        <li>Greenhouse gas emissions from <b>{Math.round(1126 * this.state.carbon_lb / 1000)}</b> miles driven by an average passenger vehicle</li>
+                        <li>CO<sub>2</sub> emissions from <b>{Math.round(51 * this.state.carbon_lb / 1000)}</b> gallons of gasoline consumed</li>
+                        <li>CO<sub>2</sub> emissions from <b>{Math.round(500 * this.state.carbon_lb / 1000)}</b> pounds of coal burned</li>
+                        <li>CO<sub>2</sub> emissions from <b>{Math.round(57848 * this.state.carbon_lb / 1000)}</b> phones charged</li>
+                        <li>Carbon sequested by <b>{Math.round(7.5 * this.state.carbon_lb / 1000)}</b> tree saplings grown for 10 years</li>
                     </ul>
                     <button className="btn btn-warning pt-1" onClick = {this.handleClick}>Return</button>
                 </div>
