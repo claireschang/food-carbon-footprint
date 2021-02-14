@@ -9,9 +9,15 @@
                 <input type="text" name="query_url" placeholder="Paste in a URL of an image" id="image-upload">
                 <input type="submit" value="Submit" class="sub">
             </form>
+            <div id="pic">
+                {% if img %}
+                    <h2>Your submission: </h2>
+                    <img id="query-img" src={{ img }}>
+                {% endif %}
+            </div>
             <div id="ingredients">
                 {% if foods %}
-                    <h2>Ingredients: </h2>
+                    <h2>Food Matches</h2>
                 <ul>
                     {% for item in foods %}
                         <li>{{ item }}</li>
@@ -19,14 +25,24 @@
                 </ul>
                 {% endif %}
                 <br>
-                {% if carbons!=[] %}
-                    <h2>Carbon Footprint: </h2>
+                {% if carbons and carbons !=[] %}
+                    <h2>Greenhouse Gas Emissions</h2>
+                    <h4>In Lbs of CO<sub>2</sub> per Kilogram of Food Product</h4>
                     <ul>
                         {% for item in carbons %}
                             <li>{{ item[0] }}: {{ item[1] }}</li>
                         {% endfor %}
                     </ul>
-                {% else %}
+                    <br>
+                    <h3>That could mean the equivalent of...</h3>
+                    <ul>
+                        <li>Greenhouse gas emissions from {{equiv["mi"]}} miles driven by an average passenger vehicle</li>
+                        <li>CO<sub>2</sub> emissions from {{equiv["gas"]}} gallons of gasoline consumed</li>
+                        <li>CO<sub>2</sub> emissions from {{equiv["coal"]}} pounds of coal burned</li>
+                        <li>CO<sub>2</sub> emissions from {{equiv["phone"]}} phones charged</li>
+                        <li>Carbon sequested by {{equiv["trees"]}} tree saplings grown for 10 years</li>
+                    </ul>
+                {% elif carbons %}
                     <h3>Match Failure</h3>
                     <p>Unfortunately, we weren't able to match your picture with an item in our food to carbon database.</p>
                     <p>Please try another image.</p>

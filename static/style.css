@@ -1,5 +1,6 @@
 body {
-    background-color: #B7B7A4;
+    background-color: #A5A58D;
+    font-family: "Lucida Console", "Courier New", monospace;
 }
 #container{
     position: absolute;
@@ -22,10 +23,10 @@ input[type=text] {
     text-align: center;
     height: 70px;
     font-size: 24px;
-    font-family: "Lucida Console", "Courier New", monospace;
     border: 5px #CB997E solid;
+    font-family: "Lucida Console", "Courier New", monospace;
 }
-input[type=submit] {
+input[type=submit], input[type=button] {
     display: block;
     background-color: #3F4238;
     border: none;
@@ -42,9 +43,23 @@ input[type=submit] {
     font-size: 24px;
     font-family: "Lucida Console", "Courier New", monospace;
   }
+  #pic {
+      display: block;
+      font-size: 18px;
+      margin-left: 10%;
+  }
+  #query-img {
+      height: 200px;
+      border-radius: 20px;
+  }
   #ingredients {
       display: block;
       font-size: 18px;
-      padding: 16px 32px;
-      font-family: "Lucida Console", "Courier New", monospace;
+      padding-top: 32px;
+      margin-left: 10%;
+      margin-right: 10%;
+  }
+
+  li {
+      margin: 10px;
   }

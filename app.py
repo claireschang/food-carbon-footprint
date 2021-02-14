@@ -38,20 +38,42 @@ def findIngredients():
 
     foods = []
     carbons = []
+    maxCarbon = 0
     for concept in response.outputs[0].data.concepts:
         # print('%12s: %.2f' % (concept.name, concept.value))
         if concept.value > 0.70:
             carbon = ""
             if concept.name in food.food_to_carbon:
-                carbon = str(food.food_to_carbon[concept.name])
-                carbons.append((concept.name, carbon))
+                carbon = food.food_to_carbon[concept.name]
+                if carbon > maxCarbon:
+                    maxCarbon = carbon
+                carbons.append((concept.name, str(carbon)))
             else:
                 foods.append(concept.name)
-
+    equiv = ghgequivalence(maxCarbon)
     # print(foods)
     # if 'nut' in foods:
     #     print("Allergy alert!")
-    return render_template("index.html", foods=foods, carbons=carbons)
+    return render_template("index.html", foods=foods, carbons=carbons, img=request.form['query_url'], equiv=equiv)
+
+
+def ghgequivalence(lbs):
+    # every 1000 lbs of CO2 is equivalent to
+    mi = 1126 * lbs / 1000 # GHG from __ miles driven by an average passenger vehicle
+    gas = 51 * lbs / 1000 # CO2 emissions from __ gallons of gasoline consumed
+    coal = 500 * lbs / 1000  # CO2 emissions from __ pounds of coal burned
+    phone = 57848 * lbs / 1000  # CO2 emissions from __ phones charged
+    trees = 7.5 * lbs / 1000  # carbon sequestered by __ tree seedlings grown for 10 years
+    return {
+        "mi": format(mi, '.2f'), 
+        "gas": format(gas, '.2f'), 
+        "coal": format(coal, '.2f'), 
+        "phone": format(phone, '.2f'), 
+        "trees": format(trees, '.2f')
+    }
+    
+
+
 
 if __name__=='__main__': 
    app.run()
