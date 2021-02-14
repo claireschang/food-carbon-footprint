@@ -83,7 +83,7 @@ class Electricity extends Component {
                     <h2 className="py-5">Carbon Emission of Electricity Consumption</h2>
                     <p>Total Carbon Emission (kg): {this.state.carbon_kg}</p>
                     <p>Total Carbon Emission (lb): {this.state.carbon_lb}</p>
-                    <ul className="list-group">
+                    <ul className="list-group" style={{color: 'black'}}>
                         <li className="list-group-item">Greenhouse gas emissions from <b>{Math.round(1126 * this.state.carbon_lb / 1000)}</b> miles driven by an average passenger vehicle</li>
                         <li className="list-group-item">CO<sub>2</sub> emissions from <b>{Math.round(51 * this.state.carbon_lb / 1000)}</b> gallons of gasoline consumed</li>
                         <li className="list-group-item">CO<sub>2</sub> emissions from <b>{Math.round(500 * this.state.carbon_lb / 1000)}</b> pounds of coal burned</li>
