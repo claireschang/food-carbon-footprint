@@ -10,6 +10,7 @@ import Vehicle from './pages/Vehicle';
 import Home from './pages/Home';
 import Shipping from './pages/Shipping';
 import Electricity from './pages/Electricity';
+import Food from './pages/Food';
 
 class App extends Component {
 
@@ -32,6 +33,7 @@ class App extends Component {
                       <Link className="dropdown-item" to='/vehicle'>Carbon Emission by Driving Vehicle</Link>
                       <Link className="dropdown-item" to = '/shipping'>Carbon Emission of Shipping Packages</Link>
                       <Link className="dropdown-item" to = '/electricity'>Carbon Emission of Electricity Consumption</Link>
+                      <Link className="dropdown-item" to = '/food'>Food</Link>
                   </div>
                 </li>
               </ul>
@@ -51,6 +53,10 @@ class App extends Component {
             <Route exact path = '/electricity'>
               <Electricity />
             </Route>
+            <Route exact path = '/food'>
+              <Food />
+            </Route>
+
           </Switch>
         </Router>
 
