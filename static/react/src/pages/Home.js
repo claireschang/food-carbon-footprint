@@ -29,7 +29,7 @@ class Home extends Component{
                 <p>Although we usually think about transportation when it comes to carbon emissions, food actually has a major impact on carbon, as we can see from this image from the EPA: 
                     <br /><img width="200px" margin-left="50px" src="https://www.epa.gov/sites/production/files/2016-05/global_emissions_sector_2015.png" />
                     <br />From this second image, we can see that our food choices have a major impact on the environment. So, the next time you eat out or go to the grocery store, consider stocking up on more vegetables, and reducing your beef and lamb intake!
-                    <br /><img width="600px" margin-left="50px" src="https://ourworldindata.org/uploads/2020/02/Environmental-impact-of-food-by-life-cycle-stage-1536x1380.png" />
+                    <br /><img width="800px" margin-left="50px" src="https://ourworldindata.org/uploads/2020/02/Environmental-impact-of-food-by-life-cycle-stage-1536x1380.png" />
 </p>
             </div>
         );
