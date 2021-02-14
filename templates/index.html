@@ -12,12 +12,25 @@
             <div id="ingredients">
                 {% if foods %}
                     <h2>Ingredients: </h2>
-                {% endif %}
                 <ul>
                     {% for item in foods %}
                         <li>{{ item }}</li>
                     {% endfor %}
                 </ul>
+                {% endif %}
+                <br>
+                {% if carbons!=[] %}
+                    <h2>Carbon Footprint: </h2>
+                    <ul>
+                        {% for item in carbons %}
+                            <li>{{ item[0] }}: {{ item[1] }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <h3>Match Failure</h3>
+                    <p>Unfortunately, we weren't able to match your picture with an item in our food to carbon database.</p>
+                    <p>Please try another image.</p>
+                {% endif %}
             </div>
         </div>
     </body>

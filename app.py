@@ -9,6 +9,8 @@ stub = service_pb2_grpc.V2Stub(ClarifaiChannel.get_grpc_channel())
 from clarifai_grpc.grpc.api import service_pb2, resources_pb2
 from clarifai_grpc.grpc.api.status import status_code_pb2
 
+import food
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -35,15 +37,21 @@ def findIngredients():
         raise Exception("Request failed, status code: " + str(response.status.code))
 
     foods = []
+    carbons = []
     for concept in response.outputs[0].data.concepts:
         # print('%12s: %.2f' % (concept.name, concept.value))
         if concept.value > 0.70:
-            foods.append(concept.name)
+            carbon = ""
+            if concept.name in food.food_to_carbon:
+                carbon = str(food.food_to_carbon[concept.name])
+                carbons.append((concept.name, carbon))
+            else:
+                foods.append(concept.name)
 
     # print(foods)
     # if 'nut' in foods:
     #     print("Allergy alert!")
-    return render_template("index.html", foods=foods)
+    return render_template("index.html", foods=foods, carbons=carbons)
 
 if __name__=='__main__': 
    app.run()
